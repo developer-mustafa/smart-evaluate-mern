@@ -1,23 +1,26 @@
 #!/bin/bash
 
-# Replace all @/ imports with relative paths for Vercel build compatibility
+# Complete @ import fix script for all files
 
-echo "Fixing @ imports in pages..."
+echo "Fixing @ imports globally..."
 
-# Pages (from pages to components/ui)
-find src/pages -name "*.jsx" -o -name "*.tsx" | while read file; do
-  sed -i 's|from "@/components/ui/|from "../components/ui/|g' "$file"
-  sed -i 's|from "@/components/|from "../components/|g' "$file"
-  sed -i 's|from "@/lib/|from "../lib/|g' "$file"
+# Fix all JavaScript/TypeScript files in src
+find src -type f \( -name "*.jsx" -o -name "*.tsx" -o -name "*.js" -o -name "*.ts" \) | while read file; do
+  # Get the directory depth of the file
+  dir=$(dirname "$file")
+  depth=$(echo "$dir" | tr -cd '/' | wc -c)
+  depth=$((depth - 1)) # Subtract 1 for 'src' dir
+  
+  # Build relative path to src
+  if [ $depth -eq 0 ]; then
+    rel="."
+  else
+    rel=$(printf '../%.0s' $(seq 1 $depth))rel="../.."
+  fi
+  
+  # Replace @ imports with relative paths
+  sed -i "s|from \"@/|from \"${rel}/|g" "$file"
+  sed -i "s|from '@/|from '${rel}/|g" "$file"
 done
 
-echo "Fixing @ imports in components/ui..."
-
-# UI Components (from ui to ../../lib and ./button etc)
-find src/components/ui -name "*.jsx" -o -name "*.tsx" | while read file; do
-  sed -i 's|from "@/lib/utils"|from "../../lib/utils"|g' "$file"
-  sed -i 's|from "@/hooks/|from "../../hooks/|g' "$file"
-  sed -i 's|from "@/components/ui/|from "./|g' "$file"
-done
-
-echo "✅ All @ imports replaced with relative paths"
+echo "✅ All @ imports fixed!"
