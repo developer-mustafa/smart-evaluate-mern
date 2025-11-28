@@ -16,6 +16,7 @@ export default defineConfig({
     // PWA Configuration
     VitePWA({
       registerType: 'autoUpdate',
+      filename: 'manifest.json',
       includeAssets: ['favicon.ico', 'robots.txt', 'icons/*.png'],
       manifest: {
         name: 'স্মার্ট গ্রুপ ইভ্যালুয়েটর',

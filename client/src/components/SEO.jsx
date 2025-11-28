@@ -64,7 +64,7 @@ const SEO = ({
       <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       
       {/* Manifest */}
-      <link rel="manifest" href="/manifest.json" />
+
       
       {/* Structured Data (JSON-LD) */}
       {structuredData && (
