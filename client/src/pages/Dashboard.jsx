@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 import { useGetGroupsQuery, useGetMembersQuery, useGetTasksQuery, useGetEvaluationsQuery } from '../services/api';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../components/ui/table"
+import { Badge } from "../components/ui/badge"
 import GroupRankingCard from '../components/GroupRankingCard';
 import ElitePodiumCard from '../components/ElitePodiumCard';
 import { toBanglaNumber } from '../utils/rankingUtils';

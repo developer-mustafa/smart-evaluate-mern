@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleSidebarVisibility, toggleSidebarType, toggleDashboardSection, resetSettings } from '../store/settingsSlice';
-import { Switch } from "@/components/ui/switch"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Switch } from "../components/ui/switch"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../components/ui/table"
+import { Badge } from "../components/ui/badge"
+import { Button } from "../components/ui/button"
+import { Label } from "../components/ui/label"
+import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert"
 import { useTheme } from '../contexts/ThemeContext';
 import { THEME_COLORS } from '../config/themeConfig';
 
