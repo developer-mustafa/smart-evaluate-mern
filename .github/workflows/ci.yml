@@ -25,7 +25,7 @@ jobs:
       
       - name: Install dependencies
         working-directory: ./server
-        run: npm ci
+        run: npm install
       
       - name: Lint code
         working-directory: ./server
@@ -57,7 +57,7 @@ jobs:
       
       - name: Install dependencies
         working-directory: ./client
-        run: npm ci
+        run: npm install
       
       - name: Lint code
         working-directory: ./client
