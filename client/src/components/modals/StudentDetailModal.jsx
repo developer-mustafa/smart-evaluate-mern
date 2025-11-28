@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 import { useGetEvaluationsQuery } from '../../services/api';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../rel=../../components/ui/dialog"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../rel=../../components/ui/table"
-import { Badge } from "../rel=../../components/ui/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "../rel=../../components/ui/card"
-import { Avatar, AvatarFallback } from "../rel=../../components/ui/avatar"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../components/ui/dialog"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../components/ui/table"
+import { Badge } from "../components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
+import { Avatar, AvatarFallback } from "../components/ui/avatar"
 
 // Helper: Bangla Number
 const toBanglaNumber = (num) => {

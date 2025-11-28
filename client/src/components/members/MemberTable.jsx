@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import StudentDetailModal from '../modals/StudentDetailModal';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../rel=../../components/ui/table"
-import { Badge } from "../rel=../../components/ui/badge"
-import { Button } from "../rel=../../components/ui/button"
-import { Card, CardContent } from "../rel=../../components/ui/card"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../components/ui/table"
+import { Badge } from "../components/ui/badge"
+import { Button } from "../components/ui/button"
+import { Card, CardContent } from "../components/ui/card"
 
 export default function MemberTable({ members, onEdit, onDelete }) {
   const [selectedStudent, setSelectedStudent] = useState(null);
