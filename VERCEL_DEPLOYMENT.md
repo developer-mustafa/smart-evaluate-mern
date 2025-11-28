@@ -103,6 +103,28 @@ After backend is deployed, update frontend environment:
 
 3. **Set Environment Variables** (as mentioned above)
 
+## 🤖 Automated Deployment via GitHub Actions
+
+We have included a GitHub Actions workflow (`.github/workflows/deploy-vercel.yml`) that automatically deploys your app to Vercel whenever you push to the `main` branch.
+
+### Setup Instructions
+
+1.  **Get Vercel Project IDs**:
+    - Run `vercel link` locally in your project root to link it to your Vercel project.
+    - This will create a `.vercel` folder.
+    - Look inside `.vercel/project.json` to find your `orgId` and `projectId`.
+
+2.  **Configure GitHub Secrets**:
+    - Go to your GitHub Repository → Settings → Secrets and variables → Actions.
+    - Add the following Repository Secrets:
+        - `VERCEL_TOKEN`: Generate this in your Vercel Account Settings → Tokens.
+        - `VERCEL_ORG_ID`: The `orgId` from step 1.
+        - `VERCEL_PROJECT_ID`: The `projectId` from step 1.
+
+3.  **Push to Main**:
+    - Once these secrets are set, any push to the `main` branch will trigger the "Vercel Deployment" workflow.
+
+
 ## 🛠️ Troubleshooting
 
 ### CORS Issues
