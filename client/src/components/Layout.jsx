@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import AppSidebar from './AppSidebar';
+import { AppSidebar } from './AppSidebar';
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "./ui/sidebar";
 import { Separator } from "./ui/separator";
 import { Badge } from "./ui/badge";
