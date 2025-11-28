@@ -6,8 +6,9 @@ on:
       - main
 
 env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_ORG_ID: team_3cgAcbgEyvJTMswXN2ixRkXI
+  VERCEL_PROJECT_ID: prj_uANNjg2ywv9BadR8N5mxa7pfiEmb
+  VERCEL_TOKEN: eRomY1lSL1nk03l9m6okonx7
 
 jobs:
   deploy:
@@ -19,4 +20,4 @@ jobs:
         run: npm install --global vercel@latest
         
       - name: Deploy to Vercel
-        run: cd client && vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
+        run: cd client && vercel --prod --token=${{ env.VERCEL_TOKEN }} --yes
